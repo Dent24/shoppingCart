@@ -1,0 +1,293 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+nav {
+  background: #dadada;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0 10px 15px #d33569;
+          box-shadow: 0 10px 15px #d33569;
+}
+
+nav #box {
+  width: 1200px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 20% 30%;
+      grid-template-columns: 50% 20% 30%;
+  padding: 12px 5px;
+}
+
+nav #box a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+nav #box a:nth-child(1) {
+  color: #d33569;
+  cursor: pointer;
+}
+
+nav #box a:nth-child(n+2) {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+nav #box a:nth-child(n+2):hover {
+  color: #698852;
+}
+
+nav #box #link {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+nav #box #member {
+  text-align: right;
+}
+
+nav #burger {
+  display: none;
+}
+
+#banner {
+  width: 100%;
+  height: 400px;
+  background-image: url(index_banner.jpg);
+  background-position: center;
+}
+
+#buyBus {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#buyBus .detail {
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 50% 20%;
+      grid-template-columns: 30% 50% 20%;
+  grid-gap: 20px;
+}
+
+#buyBus .detail .image {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+#buyBus .detail .text {
+  padding: 10px;
+}
+
+#buyBus .detail .text h1 {
+  margin-bottom: 20px;
+}
+
+#buyBus .detail .text p {
+  line-height: 1.8;
+}
+
+#buyBus .detail .btnGroup {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+}
+
+#buyBus .detail .btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 5px;
+}
+
+#buyBus .detail .btn:nth-child(1) {
+  background: #35aed3;
+}
+
+#buyBus .detail .btn:nth-child(2) {
+  background: #3ae06c;
+}
+
+#buyBus .detail .btn:nth-child(3) {
+  background: #e06e6e;
+}
+
+#buyBus .detail .btn:hover {
+  -webkit-box-shadow: 0 0 10px #d33569;
+          box-shadow: 0 0 10px #d33569;
+}
+
+#buyBus #line {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 3px;
+  background: #d33569;
+}
+
+#buyBus #subGroup {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  width: 400px;
+}
+
+#buyBus #submit {
+  margin-top: 10px;
+  border: none;
+  background: #d33569;
+  color: #dadada;
+  padding: 5px 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#buyBus #submit:hover {
+  background: #dadada;
+  color: black;
+}
+
+#buyBus #cancel {
+  margin-top: 10px;
+  border: none;
+  background: #dadada;
+  color: black;
+  padding: 5px 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  background: #d33569;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 80px;
+}
+
+footer #contact {
+  width: 30%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+footer #contact #logo {
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  nav #box, #buyBus {
+    width: 765px;
+    margin: 0 auto;
+  }
+  nav #box a {
+    font-size: 20px;
+  }
+  nav #box #member #moreA {
+    font-size: 12px;
+  }
+  #product {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  #product .products:nth-child(3) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+  }
+  #product .products .name {
+    display: block;
+  }
+  footer #contact {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  nav #box {
+    display: none;
+  }
+  nav #burger {
+    width: 90%;
+    display: block;
+  }
+  nav #burger a {
+    display: none;
+  }
+  nav #burger a:nth-child(1) {
+    display: block;
+  }
+  nav #burger a img {
+    width: 50px;
+  }
+  nav #burger #moreA {
+    display: none;
+  }
+  nav #burger:hover a:nth-child(n+2) {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+  }
+  nav #burger:hover #moreA {
+    display: block;
+  }
+  nav #burger:hover #moreA a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+  }
+  nav #burger:hover #moreA a:nth-child(1) {
+    color: #d33569;
+  }
+  #buyBus {
+    width: 90%;
+  }
+  footer #contact {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=buyBusStyle.css.map */

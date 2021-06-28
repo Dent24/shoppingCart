@@ -1,0 +1,303 @@
+$gray : rgb(218, 218, 218);
+$red : rgb(211, 53, 105);
+$name : rgba(218, 218, 218, 0.637);
+
+@mixin box {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+nav{
+    background: $gray;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 10px 15px $red;
+    
+    #box{
+        @include box();
+        display: grid;
+        grid-template-columns: 50% 20% 30%;
+        padding: 12px 5px;
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+
+            &:nth-child(1){
+                color: $red;
+                cursor: pointer;
+            }
+
+            &:nth-child(n+2){
+                transition: 0.5s;
+                &:hover{
+                    color: rgb(105, 136, 82);
+                }
+            }
+        }
+
+        #link{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        #member{
+            text-align: right;
+        }
+    }
+
+    #burger{
+        display: none;
+    }
+}
+
+#banner{
+    width: 100%;
+    height: 400px;
+    background-image: url(index_banner.jpg);
+    background-position: center;
+}
+
+
+
+#product{
+    @include box();
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+
+    div{
+        color: black;
+
+        .image{
+            width: 100%;
+            height: 250px;
+            background-position: center;
+            background-size: cover;
+            transition: 0.5s;
+        }
+
+        p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            transition: 0.5s;
+        }
+
+        &:hover{
+            .image{
+                box-shadow: 0 0 15px $red;
+            }
+
+            p{
+                color: rgb(105, 136, 82);
+            }
+        }
+    }
+}
+
+
+footer{
+    width: 100%;
+    background: $red;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 80px;
+
+    #contact{
+        width: 600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        
+    
+        #logo{
+            text-align: right;
+        }
+    }
+}
+
+// 登入區塊
+#login{
+    width: 100vw;
+    height: 100vh;
+    background: $name;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    #loginInput{
+        width: 800px;
+        height: 600px;
+        background: white;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        box-shadow: 0px 0px 10px 10px $red;
+        position: relative;
+
+        #image{
+            width: 100%;
+            background-image: url(index_banner.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        #text{
+            margin: 100px auto 0;
+            width: 80%;
+
+            form{
+
+                label{
+                    font-size: 28px;
+                }
+
+                input{
+                    display: block;
+                    margin: 10px 0;
+                }
+
+                #userName, #userPassword{
+                    width: 100%;
+                    outline: 0;
+                    border-width: 0 0 2px;
+                    border-color: $red;
+                    font-size: 20px;
+                }
+
+                #submit{
+                    margin: 30px auto;
+                    width: 150px;
+                    padding: 10px;
+                    font-size: 18px;
+                    border: none;
+                    background: $red;
+                    color: $gray;
+                }
+            }
+
+            #close{
+                width: 50px;
+                height: 50px;
+                background: black;
+                border: none;
+                color: white;
+                border-radius: 25px;
+                position: absolute;
+                top: -25px;
+                right: -25px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1199px){
+    @mixin boxPad {
+        width: 765px;
+    }
+
+    nav #box, #product{
+        @include boxPad();
+    }
+
+    nav #box a{
+        font-size: 20px;
+    }
+
+    nav #box #member #moreA{
+        font-size: 12px;
+    }
+
+    #product{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:767px){
+    @mixin boxPhone {
+        width: 90%;
+    }
+
+    nav{
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    nav #box{
+        display: none;
+    }
+
+    nav #burger{
+        @include boxPhone();
+        display: block;
+
+        a{
+            display: none;
+
+            &:nth-child(1){
+                display: block;
+            }
+
+            img{
+                width: 50px;
+            }
+        }
+
+        #moreA{
+            display: none;
+        }
+
+        &:hover{
+
+            a:nth-child(n+2){
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 5px;
+                text-decoration: none;
+                color: black;
+            }
+
+            #moreA{
+                display: block;
+
+                a{
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    padding: 5px;
+                    text-decoration: none;
+                    color: black;
+
+                    &:nth-child(1){
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    #product{
+        @include boxPhone();
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer #contact{
+        width: 100%;
+    }    
+}

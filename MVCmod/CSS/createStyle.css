@@ -1,0 +1,305 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+nav {
+  background: #dadada;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0 10px 15px #d33569;
+          box-shadow: 0 10px 15px #d33569;
+}
+
+nav #box {
+  width: 1200px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 20% 30%;
+      grid-template-columns: 50% 20% 30%;
+  padding: 12px 5px;
+}
+
+nav #box a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+nav #box a:nth-child(1) {
+  color: #d33569;
+  cursor: pointer;
+}
+
+nav #box a:nth-child(n+2) {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+nav #box a:nth-child(n+2):hover {
+  color: #698852;
+}
+
+nav #box #link {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+nav #box #member {
+  text-align: right;
+}
+
+nav #burger {
+  display: none;
+}
+
+#banner {
+  width: 100%;
+  height: 400px;
+  background-image: url(../img/index_banner.jpg);
+  background-position: center;
+}
+
+#formTitle {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 40px;
+}
+
+#create {
+  width: 1200px;
+  margin: 0 auto;
+  width: 800px;
+  margin-top: 40px;
+  padding: 0 100px;
+}
+
+#create label {
+  font-size: 24px;
+}
+
+#create input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#create p {
+  color: #d33569;
+  margin: 10px 0;
+}
+
+#create input[type="text"], #create input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #d33569;
+}
+
+#create input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+#create #btnGroup {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin: 0 auto;
+  width: 400px;
+}
+
+#create #btnGroup .button {
+  border: none;
+  background: #d33569;
+  color: #dadada;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#create #btnGroup .button:hover {
+  background: #698852;
+  font-size: 24px;
+}
+
+footer {
+  width: 100%;
+  background: #d33569;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 80px;
+}
+
+footer #contact {
+  width: 600px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+footer #contact #logo {
+  text-align: right;
+}
+
+#login {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(218, 218, 218, 0.637);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#login #loginInput {
+  width: 800px;
+  height: 600px;
+  background: white;
+  margin: 50px auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-shadow: 0px 0px 10px 10px #d33569;
+          box-shadow: 0px 0px 10px 10px #d33569;
+  position: relative;
+}
+
+#login #loginInput #image {
+  width: 100%;
+  background-image: url(../img/index_banner.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#login #loginInput #text {
+  margin: 100px auto 0;
+  width: 80%;
+}
+
+#login #loginInput #text #loginForm label {
+  font-size: 28px;
+}
+
+#login #loginInput #text #loginForm input {
+  display: block;
+  margin: 10px 0;
+}
+
+#login #loginInput #text #loginForm #userName, #login #loginInput #text #loginForm #userPassword {
+  width: 100%;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #d33569;
+  font-size: 20px;
+}
+
+#login #loginInput #text #loginForm #submit {
+  margin: 30px auto;
+  width: 150px;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  background: #d33569;
+  color: #dadada;
+}
+
+#login #loginInput #text #close {
+  width: 50px;
+  height: 50px;
+  background: black;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: -25px;
+  right: -25px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  nav #box {
+    width: 765px;
+  }
+  nav #box a {
+    font-size: 20px;
+  }
+  nav #box #member #moreA {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  nav #box {
+    display: none;
+  }
+  nav #burger {
+    width: 90%;
+    display: block;
+  }
+  nav #burger a {
+    display: none;
+  }
+  nav #burger a:nth-child(1) {
+    display: block;
+  }
+  nav #burger a img {
+    width: 50px;
+  }
+  nav #burger #moreA {
+    display: none;
+  }
+  nav #burger:hover a:nth-child(n+2) {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+  }
+  nav #burger:hover #moreA {
+    display: block;
+  }
+  nav #burger:hover #moreA a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+  }
+  nav #burger:hover #moreA a:nth-child(1) {
+    color: #d33569;
+  }
+  #create {
+    width: 90%;
+  }
+  #create #btnGroup {
+    width: 60%;
+  }
+  footer #contact {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=createStyle.css.map */

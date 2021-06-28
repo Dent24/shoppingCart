@@ -1,0 +1,76 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+nav {
+  width: 100%;
+  background: gray;
+  padding: 15px;
+  font-size: 20px;
+}
+
+nav #box {
+  width: 1200px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% (1fr)[3] 40%;
+      grid-template-columns: 20% repeat(3, 1fr) 40%;
+}
+
+nav #box h4 {
+  color: gold;
+}
+
+nav #box a {
+  text-decoration: none;
+  color: white;
+}
+
+#chooseTime {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3] 40%;
+      grid-template-columns: repeat(3, 1fr) 40%;
+}
+
+#chooseTime input[type="submit"] {
+  width: 200px;
+}
+
+#chooseTime #date input[type="submit"] {
+  width: 250px;
+}
+
+table {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+table th, table td {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+h1 {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+#image {
+  width: 1200px;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=masterPortStyle.css.map */

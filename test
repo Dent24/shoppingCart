@@ -1,0 +1,5 @@
+SELECT mo.id, od.id, od.productId, orderTime, ops.changeTime, 
+(SELECT price FROM oldProduct WHERE productId = (SELECT od.productId) AND changeTime = (SELECT ops.changeTime)) price
+FROM memberOrder mo
+JOIN orderDetail od ON od.orderId = mo.id
+JOIN (SELECT op.productId, max(changeTime) changeTime FROM oldProduct op

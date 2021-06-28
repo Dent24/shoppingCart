@@ -1,0 +1,72 @@
+@mixin box {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+nav{
+    width: 100%;
+    background: gray;
+    padding: 15px;
+    font-size: 20px;
+
+    #box{
+        @include box();
+        display: grid;
+        grid-template-columns: 20% repeat(3, 1fr) 40%;
+
+        h4{
+            color: gold;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+#chooseTime{
+    @include box();
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 40%;
+
+    input[type="submit"]{
+        width: 200px;
+    }
+
+    #date{
+        input[type="submit"]{
+            width: 250px;
+        }
+    }
+
+}
+
+table{
+    @include box();
+    margin-top: 40px;
+    border-collapse: collapse;
+    border: 1px solid black;
+
+    th, td {
+        border: 1px solid black;
+        padding: 15px;
+    }
+}
+
+h1{
+    @include box();
+    margin-top: 40px;
+}
+
+#image{
+    @include box();
+}

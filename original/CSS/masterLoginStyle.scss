@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+form{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 200px;
+
+    table{
+        width: 100%;
+
+        .labelText{
+            width: 200px;
+            text-align: right;
+        }
+
+        th{
+            background: gray;
+            color: white;
+        }
+
+        tr{
+            td, th{
+                padding: 15px;
+            }
+
+            input[type="text"],input[type="password"]{
+                width: 100%;
+            }
+
+            &:nth-child(4){
+                text-align: center;
+                background: gray;
+
+                input{
+                    border: none;
+                    background: rgba(0, 0, 0, 0);
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

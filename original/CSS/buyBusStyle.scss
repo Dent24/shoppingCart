@@ -1,0 +1,320 @@
+$gray : rgb(218, 218, 218);
+$red : rgb(211, 53, 105);
+$name : rgba(218, 218, 218, 0.637);
+$add : rgb(53, 174, 211);
+$cut : rgb(58, 224, 108);
+$del : rgb(224, 110, 110);
+
+@mixin box {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@mixin bigText {
+    text-align: center;
+    font-size: 40px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+nav{
+    background: $gray;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 10px 15px $red;
+    
+    #box{
+        @include box();
+        display: grid;
+        grid-template-columns: 50% 20% 30%;
+        padding: 12px 5px;
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+
+            &:nth-child(1){
+                color: $red;
+                cursor: pointer;
+            }
+
+            &:nth-child(n+2){
+                transition: 0.5s;
+                &:hover{
+                    color: rgb(105, 136, 82);
+                }
+            }
+        }
+
+        #link{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        #member{
+            text-align: right;
+        }
+    }
+
+    #burger{
+        display: none;
+    }
+}
+
+#banner{
+    width: 100%;
+    height: 400px;
+    background-image: url(index_banner.jpg);
+    background-position: center;
+}
+
+#buyBus{
+    @include box();
+
+    .detail{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 30% 50% 20%;
+        grid-gap: 20px;
+
+        .image{
+            width: 100%;
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .text{
+            padding: 10px;
+
+            h1{
+                margin-bottom: 20px;
+            }
+
+            p{
+                line-height: 1.8;
+            }
+        }
+
+        .btnGroup{
+            height: 100%;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .btn{
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 20px;
+            text-align: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.5s;
+            padding-top: 5px;
+
+            &:nth-child(1){
+                background: $add;
+            }
+
+            &:nth-child(2){
+                background: $cut;
+            }
+
+            &:nth-child(3){
+                background: $del;
+            }
+
+            &:hover{
+                box-shadow: 0 0 10px $red;
+            }
+        }
+    }
+
+    #line{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 3px;
+        background: $red;
+    }
+
+    #subGroup{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        width: 400px;
+    }
+
+    #submit{
+        margin-top: 10px;
+        border: none;
+        background: $red;
+        color: $gray;
+        padding: 5px 20px;
+        font-size: 24px;
+        cursor: pointer;
+
+        &:hover{
+            background: $gray;
+            color: black;
+        }
+    }
+
+    #cancel{
+        margin-top: 10px;
+        border: none;
+        background: $gray;
+        color: black;
+        padding: 5px 20px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+footer{
+    width: 100%;
+    background: $red;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 80px;
+
+    #contact{
+        width: 30%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        
+    
+        #logo{
+            text-align: right;
+        }
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1199px){
+    @mixin boxPad {
+        width: 765px;
+        margin: 0 auto;
+    }
+
+    nav #box, #buyBus{
+        @include boxPad();
+    }
+
+    nav #box a{
+        font-size: 20px;
+    }
+
+    nav #box #member #moreA{
+        font-size: 12px;
+    }
+
+    #product{
+        grid-template-columns: repeat(2, 1fr);
+
+        .products{
+
+            &:nth-child(3){
+                grid-column: 1 / 3;
+            }
+
+            .name{
+                display: block;
+            }
+        }
+    }
+
+    footer{
+        #contact{
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width:767px){
+    @mixin boxPhone {
+        width: 90%;
+    }
+
+    nav{
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    nav #box{
+        display: none;
+    }
+
+    nav #burger{
+        @include boxPhone();
+        display: block;
+
+        a{
+            display: none;
+
+            &:nth-child(1){
+                display: block;
+            }
+
+            img{
+                width: 50px;
+            }
+        }
+
+        #moreA{
+            display: none;
+        }
+
+        &:hover{
+
+            a:nth-child(n+2){
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 5px;
+                text-decoration: none;
+                color: black;
+            }
+
+            #moreA{
+                display: block;
+
+                a{
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    padding: 5px;
+                    text-decoration: none;
+                    color: black;
+
+                    &:nth-child(1){
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    #buyBus{
+        @include boxPhone();
+    }
+
+    footer{
+        #contact{
+            width: 100%;
+        }
+    }
+}
